@@ -1,13 +1,35 @@
 * {
     margin: 0;
+    box-sizing: border-box;
     padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
 body {
-    background-color: #00524f;
     color: #fdf5ec;
-    padding: 20px 0px;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1505px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .header {
@@ -15,24 +37,23 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
+    position: absolute;
+    top: 37px;
+    left: -2px;
+    right: -2px;
+    z-index: 10;
 }
 
 .main-nav__list {
     list-style-type: none;
     display: flex;
-    gap: 80px;
-
+    gap: 5.5rem;
 }
 
 .main-nav__link {
     color: #fafeff;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.main-nav__link:hover {
-    text-decoration: underline;
+    font-size: 1.6rem;
+    line-height: 1;
 }
 
 .main-nav {
@@ -40,15 +61,14 @@ body {
     align-items: center;
 }
 
-
 .main-nav__button {
-    border-radius: 20px;
-    padding: 10px 20px;
+    border-radius: 35px;
+    padding: 17px 43px;
     background-color: #deda7b;
     color: #272727;
     text-decoration: none;
-    font-size: 16px;
-    margin-left: 20px;
+    font-size: 1.6rem;
+    line-height: 1;
     border: 2px solid #deda7b;
     transition: transform 0.2s linear;
 }
@@ -60,31 +80,70 @@ body {
     transform: scale(1.1);
 }
 
-
 .hero {
     display: flex;
-    flex-direction: column;
-    margin-top: 30px;
+    flex-wrap: wrap;
     gap: 40px;
+    background-color: #00524f;
+    padding: 110px 40px 80px;
+    height: 100vh;
+    position: relative;
 }
 
+.hero .content-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+
+.hero .content-bottom h2 {
+    font-size: 9.1rem;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.hero .content-bottom .text-left {
+    max-width: 45rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+.hero .content-bottom .text-right {
+    text-align: right;
+}
+
+
 .hero-title {
-    font-size: 90px;
-    font-weight: lighter;
-    max-width: 600px;
-    text-align: left;
+    font-size: 9.2rem;
+    line-height: 1;
+    font-weight: 400;
+    position: absolute;
+    top: 15%;
+    left: 2%;
+    z-index: 2;
 }
 
 .dots {
     display: flex;
     justify-content: center;
-    gap: 55px;
+    align-items: center;
+    gap: 3.8vw;
     margin: 30px 0;
+    position: absolute;
+    z-index: 1;
+    top: 47%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
 }
 
 .dots span {
-    width: 40px;
-    height: 40px;
+    width: 3rem;
+    height: 3rem;
     background-color: #f8caca;
     border-radius: 50%;
     display: inline-block;
@@ -99,63 +158,56 @@ body {
     font-weight: lighter;
 }
 
-.hero-description {
-    max-width: 600px;
-    font-size: 18px;
-    text-align: left;
-}
-
 .services {
     background-color: #f7f0ec;
     color: #272727;
-    padding: 200px;
-    margin-top: 190px;
-    position: relative;
+    padding-bottom: 2.3rem;
 }
 
-.services__text {
-    font-size: 60px;
-    text-align: left;
+.services .content-wrap {
+    padding: 12.2rem 0 15rem;
+}
+
+.text-wrap {
+    font-size: 5.8rem;
+    line-height: 1.1;
+    margin-bottom: 7.6rem;
 }
 
 .services__button {
-    display: inline-block;
-    padding: 20px 30px;
+    padding: 1.8rem 3.5rem;
     background-color: #c4b2f6;
-    border-radius: 30px;
+    border: 2px solid #c4b2f6;
+    border-radius: 55px;
     color: #272727;
-    text-decoration: none;
-    position: absolute;
-    bottom: 100px;
-    left: 200px;
+    font-size: 1.6rem;
+    line-height: 1;
+    transition: all .2s linear;
 }
 
 .services__button:hover {
     background-color: #272727;
-    border: 2px solid #c4b2f6;
     color: #fafeff;
     cursor: pointer;
-    transition-duration: 0.2s;
 }
 
 .tech {
     background: #272727;
-    padding: 100px;
     border-radius: 10px;
-    margin: 20px;
+    margin: 20px 38px 0;
 }
 
-.tech__content {
-    text-align: left;
+.tech .content-wrap {
     color: #f7f1ea;
+    padding: 16.4rem 1.5rem;
 }
 
 .tech__badge {
-    padding: 10px 15px;
-    border-radius: 10px;
+    padding: 1.2rem 0.8rem;
+    border-radius: 12px;
     display: inline-block;
     margin: 5px;
-    font-size: 50px;
+    font-size: 3.6rem;
 }
 
 .tech__badge--yellow {
@@ -170,49 +222,82 @@ body {
 
 .case-studies {
     background-color: #ffffff;
-    padding: 80px;
+    padding: 9rem 0
 }
 
 .case-studies__title {
-    font-size: 73.5px;
-    font-weight: lighter;
+    font-size: 5.8rem;
+    font-weight: 400;
+    line-height: 1;
     color: #282828;
+    margin-bottom: 6.7rem;
 }
 
 .case-studies__item {
-    padding: 116px 29px;
-    margin: 74px 10px;
-    background-color: #f5e1f7;
-    text-align: left;
-    border-radius: 50px;
+    padding: 9.2rem 2.8rem 4.5rem;
 }
 
 .case-studies__name {
-    font-size: 50px;
+    font-size: 3.9rem;
     color: black;
+    font-weight: 400;
+    margin-bottom: 11.3rem;
+    max-width: 20em;
 }
 
 .case-studies__item__button {
-    display: inline-block;
-    margin: 73px 51px;
     text-decoration: none;
-    background-color: #f7f0ec;
+    background-color: #fff;
     color: black;
+    border-radius: 40px;
+    padding: 1.8rem 3.7rem;
+    font-size: 1.6rem;
 }
 
 .case-studies__button {
-    display: inline-block;
-    padding: 20px 55px;
+    padding: 1.8rem 3.6rem;
+    font-size: 1.6rem;
+    line-height: 1;
     border-radius: 70px;
     background-color: #ec7a5e;
     border: 2px solid #ec7a5e;
-    text-decoration: none;
     color: black;
 }
 
 .case-studies__button:hover {
     background-color: #000000;
     color: #5c5b5b;
+}
+
+.case-studies__card {
+    position: relative;
+    border-radius: 90px;
+    overflow: hidden;
+    margin-bottom: 5.6rem;
+}
+
+.case-studies__card:hover {
+    cursor: pointer;
+}
+
+
+.case-studies__card .content-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.case-studies__card .bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("./images/bg01.svg") 50% 50% / cover no-repeat;
+    z-index: 1;
+}
+
+.case-studies .link-wrap {
+    text-align: right;
 }
 
 .blog {
