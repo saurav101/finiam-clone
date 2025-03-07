@@ -23,6 +23,10 @@
                 <li><a href="/" class="main-nav__button">Let's talk</a></li>
             </ul>
         </nav>
+        <div class="burger-menu">
+            <span></span>
+            <span></span>
+        </div>
     </header>
     <section class="hero">
         <h1 class="hero-title">Financial tech <br /> for humans?</h1>
@@ -49,8 +53,12 @@
         <div class="container">
             <div class="content-wrap">
                 <div class="text-wrap">
-                    <p>We tackle each project as a new partnership and make sure to simplify every process, even when
-                        facing the most complex problems.</p>
+                    <p>We tackle each project as a new partnership
+                        <span class="span__image">&nbsp; &nbsp;</span>
+                        and make sure to simplify every process
+                        <span class="span__image-simplify">&nbsp; &nbsp;</span>,
+                        even when facing the most complex problems.
+                    </p>
                 </div>
                 <a href="#" class="services__button">Know more about Finiam</a>
             </div>
@@ -69,7 +77,7 @@
                     <span class="tech__badge tech__badge--purple">Node</span>
                     <span class="tech__badge tech__badge--purple">React</span>
                     <span class="tech__badge tech__badge--purple">Elixir & Phoenix</span>
-                    <span class="tech__badge tech__badge--purple">Solidity</span>†
+                    <span class="tech__badge tech__badge--purple">Solidity</span>
                     <span class="tech__badge tech__badge--purple">Rust</span>
                     <span class="tech__badge tech__badge--purple">Cairo</span>
                     <span class="tech__badge tech__badge--purple">Svelte</span>
@@ -97,71 +105,138 @@
                 <a href="#" class="case-studies__button">Read more case studies</a>
             </div>
         </div>
+        <div class="case--studies__sponsors">
+            <img src="/images/case__studies.png" alt="Sponsors">
+        </div>
     </section>
     <section class="blog">
         <div class="container">
             <div class="content-wrap">
                 <h2 class="blog__title">Sharing is caring so we make time to write about our experience.</h2>
                 <div class="latest__post">
-                    <p class="latest__post--title">Latest blog posts</p>
+                    <p>Latest blog posts</p>
                 </div>
                 <div class="blog__posts">
-                    <article class="blog__post">
-                        <h3 class="blog__post-title">Storing custom structs in Cairo 1</h3>
-                    </article>
-                    <article class="blog__post">
-                        <h3 class="blog__post-title">Sign in with Metamask using LiveView</h3>
-                    </article>
-                    <article class="blog__post">
-                        <h3 class="blog__post-title">How Learning to Code Can Make You a Better Product Manager</h3>
-                    </article>
-                    <article class="blog__post">
-                        <h3 class="blog__post-title">Creating animated chickens with zdog</h3>
-                    </article>
+                    <div class="post-item">
+                        <div class="img-holder">
+                            <img src="./images/blog01.jpeg" alt="img">
+                        </div>
+                        <div class="text-wrap">
+                            <article class="blog__post">
+                                <h3 class="blog__post-title">Storing custom structs in Cairo 1</h3>
+                            </article>
+                            <div class="user-profile">
+                                <div class="user-image">
+                                    <img src="./images/user01.png" alt="davide silva">
+                                </div>
+                                <span class="user-name">davide silva</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <div class="img-holder">
+                            <img src="./images/blog02.jpeg" alt="img">
+                        </div>
+                        <div class="text-wrap">
+                            <article class="blog__post">
+                                <h3 class="blog__post-title">Sign in with Metamask using LiveView</h3>
+                            </article>
+                            <div class="user-profile">
+                                <div class="user-image">
+                                    <img src="./images/user02.webp" alt="José Diogo Viana">
+                                </div>
+                                <span class="user-name">José Diogo Viana</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <div class="img-holder">
+                            <img src="./images/blog03.png" alt="img">
+                        </div>
+                        <div class="text-wrap">
+                            <article class="blog__post">
+                                <h3 class="blog__post-title">How Learning to Code Can Make You a Better Product Manager
+                                </h3>
+                            </article>
+                            <div class="user-profile">
+                                <div class="user-image">
+                                    <img src="./images/user03.png" alt="Anna Trofimenko">
+                                </div>
+                                <span class="user-name">Anna Trofimenko</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-item">
+                        <div class="img-holder">
+                            <img src="./images/blog04.png" alt="img">
+                        </div>
+                        <div class="text-wrap">
+                            <article class="blog__post">
+                                <h3 class="blog__post-title">Creating animated chickens with zdog</h3>
+                            </article>
+                            <div class="user-profile">
+                                <div class="user-image">
+                                    <img src="./images/user04.webp" alt="David Lange">
+                                </div>
+                                <span class="user-name">David Lange</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <a href="/" class="blog__button" target="_blank">Read our blog</a>
+                <div class="btn-holder">
+                    <a href="/" class="blog__button" target="_blank">Read our blog</a>
+                </div>
             </div>
         </div>
     </section>
-
     <footer class="footer">
-        <div class="footer__container">
-            <nav class="footer__nav">
-                <ul class="footer__menu">
-                    <li class="footer__item"><a href="#" class="footer__link footer__link--active">Home</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Work</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Contact</a></li>
-                </ul>
-                <ul class="footer__menu">
-                    <li class="footer__item"><a href="#" class="footer__link">About</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Blog</a></li>
-                    <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
-                </ul>
-            </nav>
-
-            <div class="footer__buttons">
-                <button class="footer__btn footer__btn--outline">Book a call</button>
-                <button class="footer__btn footer__btn--solid">Join our team</button>
-            </div>
-            <div class="footer__circle">
-                <span></span>
-            </div>
-
-            <h2 class="footer__heading">
-                Let's build the next big <br> thing, together.
-            </h2>
-
-            <div class="footer__contact">
-                <a href="mailto:contact@finiam.com" class="footer__email">contact@finiam.com</a>
-                <div class="footer__social">
-                    <a href="https://www.linkedin.com/company/finiam/" class="footer__social-link"
-                        target="_blank">TW</a>
-                    <a href="https://www.linkedin.com/company/finiam/" class="footer__social-link"
-                        target="_blank">IN</a>
+        <div class="container">
+            <div class="footer__circle"></div>
+            <div class="content-wrap">
+                <div class="content-top">
+                    <nav class="footer__nav">
+                        <ul class="footer__menu">
+                            <li class="footer__item">
+                                <a href="#" class="footer__link footer__link--active">Home</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Work</a>
+                            </li>
+                            <li class="footer__item">
+                                <a href="#" class="footer__link">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="footer__menu">
+                            <li class="footer__item"><a href="#" class="footer__link">About</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Blog</a></li>
+                            <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+                        </ul>
+                    </nav>
+                    <div class="button-wrap">
+                        <div class="footer__buttons">
+                            <button class="footer__btn footer__btn--outline">Book a call</button>
+                            <button class="footer__btn footer__btn--solid">Join our team</button>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="footer__heading">
+                    Let's build the next big thing, together.
+                </h2>
+                <div class="content-bottom">
+                    <div class="footer__contact">
+                        <div class="link-wrap">
+                            <a href="mailto:contact@finiam.com" class="footer__email">contact@finiam.com</a>
+                        </div>
+                        <div class="footer__social">
+                            <a href="https://www.linkedin.com/company/finiam/" class="footer__social-link"
+                                target="_blank">TW</a>
+                            <a href="https://www.linkedin.com/company/finiam/" class="footer__social-link"
+                                target="_blank">IN</a>
+                        </div>
+                        <span class="footer__credits">Shaped by Saurav</span>
+                    </div>
                 </div>
             </div>
-
-            <p class="footer__credits">Shaped by Saurav</p>
         </div>
     </footer>
 </body>
