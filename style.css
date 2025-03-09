@@ -315,10 +315,36 @@ html {
     text-align: right;
 }
 
-.case--studies__sponsors {
-    object-fit: cover;
-    padding-top: 4rem;
+.sponsors-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background: white;
+    padding: 10px 0;
+    margin-top: 5em;
+}
 
+.sponsors-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+    animation: slideLeft 20s linear infinite;
+    width: max-content;
+}
+
+.sponsors-wrapper img {
+    height: 30px;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .blog {
