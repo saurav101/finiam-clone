@@ -20,7 +20,7 @@ img {
 
 body {
     color: #fdf5ec;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -40,7 +40,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    position: absolute;
+    position: fixed;
     top: 1.4rem;
     left: 0;
     right: 0;
@@ -56,9 +56,25 @@ html {
 }
 
 .main-nav__link {
-    color: #fafeff;
-    font-size: 1.6rem;
+    color: #fff9ff;
+    font-size: 1.3rem;
     line-height: 1;
+}
+
+.main-nav__link::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #fafeff;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+
+}
+
+.main-nav__link:hover::after {
+    transform: scale(1);
 }
 
 .main-nav {
@@ -68,11 +84,11 @@ html {
 
 .main-nav__button {
     border-radius: 35px;
-    padding: 17px 43px;
+    padding: 17px 37px;
     background-color: #deda7b;
     color: #272727;
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     line-height: 1;
     border: 2px solid #deda7b;
     transition: transform 0.2s linear;
@@ -238,7 +254,7 @@ html {
 
 .case-studies {
     background-color: #ffffff;
-    padding: 9rem 0
+    padding: 9rem 0;
 }
 
 .case-studies__title {
@@ -261,9 +277,13 @@ html {
     max-width: 20em;
 }
 
+.case-studies__moto {
+    opacity: 0.4;
+}
+
 .case-studies__item__button {
     text-decoration: none;
-    background-color: #fff;
+    background-color: #f7f0ec;
     color: black;
     border-radius: 40px;
     padding: 1.8rem 3.7rem;
@@ -278,11 +298,13 @@ html {
     background-color: #ec7a5e;
     border: 2px solid #ec7a5e;
     color: black;
+    transition: transform 0.2s ease-in-out;
 }
 
 .case-studies__button:hover {
-    background-color: #000000;
-    color: #5c5b5b;
+    background-color: #272727;
+    color: #ffffff;
+    transform: scale(1.04);
 }
 
 .case-studies__card {
@@ -290,10 +312,21 @@ html {
     border-radius: 90px;
     overflow: hidden;
     margin-bottom: 3.6rem;
+    transition: transform 0.3s ease-in-out;
 }
 
 .case-studies__card:hover {
+    transform: translateY(-15px);
     cursor: pointer;
+}
+
+.case-studies__card .case-studies__item__button {
+    transition: transform 0.5s ease;
+}
+
+.case-studies__card:hover .case-studies__item__button {
+    background-color: #ffffff;
+    transform: translateY(-15px);
 }
 
 .case-studies__card .content-wrap {
@@ -309,6 +342,11 @@ html {
     left: 0;
     background: url("./images/bg01.svg") 50% 50% / cover no-repeat;
     z-index: 1;
+    transition: transform 0.5s ease-out;
+}
+
+.case-studies__card:hover .bg {
+    transform: scale3d(1.2, 1.2, 1);
 }
 
 .case-studies .link-wrap {
@@ -329,7 +367,7 @@ html {
     display: flex;
     align-items: center;
     gap: 7rem;
-    animation: slideLeft 20s linear infinite;
+    animation: slideLeft 60s linear infinite;
     width: max-content;
 }
 
@@ -339,7 +377,7 @@ html {
 
 @keyframes slideLeft {
     from {
-        transform: translateX(0);
+        transform: translateX(50%);
     }
 
     to {
@@ -364,6 +402,7 @@ html {
     font-size: 1.6rem;
     line-height: 1.2;
     margin-bottom: 2.9rem;
+    opacity: 0.4;
 }
 
 .blog__posts {
@@ -405,6 +444,14 @@ html {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    border: 2px solid #f8f1ec;
+    transition: transform 0.2s ease-in-out;
+}
+
+.post-item:hover {
+    cursor: pointer;
+    border: 2px solid #c4b2f6;
+    transform: scale(1.02);
 }
 
 .post-item .img-holder {
@@ -419,14 +466,14 @@ html {
 }
 
 .blog__button {
-    border-radius: 50px;
-    padding: 1.8rem 3.6rem;
-    background-color: #deda7b;
+    border-radius: 60px;
+    padding: 1.4rem 3.2rem;
+    background-color: #DEDA7B;
     color: #272727;
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     border: 2px solid #deda7b;
-    transition: transform 0.2s linear;
+    transition: transform 0.4s linear;
     display: inline-block;
     vertical-align: middle;
 }
@@ -435,7 +482,7 @@ html {
     background-color: #272727;
     color: #fafeff;
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.03);
 }
 
 .user-profile {
@@ -493,13 +540,33 @@ html {
 
 .footer__link {
     text-decoration: none;
-    color: white;
-    font-size: 1.6rem;
+    color: #efe8e4;
+    font-size: 1.5rem;
     line-height: 1;
 }
 
-.footer__link:hover {
+.footer__link:focus {
     text-decoration: underline;
+    color: #fafeff;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+}
+
+.footer__link::after {
+
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #fafeff;
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+
+}
+
+.footer__link:hover::after {
+    transform: scale(1);
 }
 
 .footer .content-top .button-wrap {
@@ -513,10 +580,11 @@ html {
     justify-content: flex-end;
     align-items: center;
     gap: 15px;
+    margin: 1rem 7rem;
 }
 
 .footer__btn {
-    padding: 1.8rem 5rem;
+    padding: 1.4rem 4.6rem;
     font-size: 1.6rem;
     border: none;
     cursor: pointer;
@@ -530,39 +598,39 @@ html {
 }
 
 .footer__btn--outline:hover {
-    background: #000000;
+    background: #272727;
     color: #ffffff;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .footer__btn--solid {
     background: #c4b2f6;
-    padding: 24px 78px;
+    padding: 21px 55px;
     border-radius: 50px;
     border: 2px solid #c4b2f6;
     transition: transform 0.2s linear;
 }
 
 .footer__btn--solid:hover {
-    background: #000000;
+    background: #272727;
     color: #ffffff;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .footer__circle {
-    width: 28rem;
-    height: 28rem;
+    width: 32rem;
+    height: 32rem;
     background-color: #ec7a5e;
     border-radius: 50%;
     position: absolute;
-    top: 13rem;
+    top: 14rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .footer__heading {
-    font-size: 9.2rem;
+    font-size: 8.3rem;
     line-height: 1;
     font-weight: 400;
 }
@@ -577,13 +645,22 @@ html {
     align-items: flex-end;
 }
 
+
 .footer__email {
-    color: white;
-    font-size: 1.6rem;
-    padding: 1.8rem 4rem;
-    border: 1px solid rgb(91, 85, 85);
-    border-radius: 50px;
+    color: #f8f1ec;
+    font-size: 1.5rem;
+    padding: 1.4rem 2.9rem;
+    border-radius: 300px;
     margin-right: 15px;
+    border: 1px solid #efe8e4;
+    transition: transform 0.2s linear;
+}
+
+.footer__email:hover {
+    background-color: #efe8e4;
+    color: #292929;
+    cursor: pointer;
+    transform: scale(1.04);
 }
 
 .footer__social {
@@ -593,20 +670,28 @@ html {
 }
 
 .footer__social-link {
-    color: white;
-    font-size: 1.6rem;
+    color: #f8f1ec;
+    font-size: 1.5rem;
     line-height: 1;
-    border: 1px solid white;
-    border-radius: 45px;
-    padding: 1.5rem 2.1rem;
+    border: 1px solid #efe8e4;
+    border-radius: 300px;
+    padding: 1.5rem 1.7rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    transition: transform 0.2s linear;
+}
+
+.footer__social-link:hover {
+    background-color: #efe8e4;
+    color: #292929;
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 .footer__credits {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 1;
     color: #7a7776;
 }
@@ -623,6 +708,10 @@ html {
     .dots span {
         width: 2.8rem;
         height: 2.8rem;
+    }
+
+    .container {
+        max-width: 1340px;
     }
 
     .post-item {
@@ -659,6 +748,8 @@ html {
     .footer {
         padding: 6.8rem 0 2rem;
     }
+
+
 }
 
 @media only screen and (max-width: 1199px) {
@@ -985,11 +1076,12 @@ html {
     }
 
     .footer__buttons {
-        justify-content: flex-start;
+        display: flex;
+        flex-wrap: nowrap;
     }
 
     .footer__btn {
-        padding: 2.5rem 3.8rem !important;
+        padding: 0.3rem 6.6rem !important;
     }
 
     .footer__circle {
@@ -1030,6 +1122,8 @@ html {
 
     .footer__credits {
         font-size: 1.7rem;
+        flex: none;
+        margin-left: 28rem;
     }
 }
 
@@ -1042,5 +1136,14 @@ html {
     .dots span {
         width: 2rem;
         height: 2rem;
+    }
+
+    .footer__btn {
+        padding: 2.2rem 5.4rem !important;
+    }
+
+    .footer__buttons {
+        justify-content: flex-start;
+        margin: 1rem 0;
     }
 }
