@@ -25,10 +25,8 @@
             </ul>
         </nav>
         <div class="burger-menu">
-            <a href="/" target="_self">
-                <span></span>
-                <span></span>
-            </a>
+            <span></span>
+            <span></span>
         </div>
     </header>
     <section class="hero">
@@ -265,6 +263,59 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('.header');
+            const burgerMenu = document.querySelector('.burger-menu');
+            const mainNav = document.querySelector('.main-nav');
+
+            // Variables for scroll detection
+            let lastScrollTop = 0;
+            const scrollThreshold = 600; // Height where navbar becomes white
+
+            // Toggle mobile menu
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                // Prevent body scrolling when menu is open
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.main-nav__link').forEach(link => {
+                link.addEventListener('click', () => {
+                    burgerMenu.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+
+                });
+            });
+
+            // Scroll event listener
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // Add/remove scrolled class based on scroll position
+                if (scrollTop > scrollThreshold) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+
+                // Show/hide navbar based on scroll direction
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    header.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    header.classList.remove('hidden');
+                }
+
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
 </body>
 
 </html>
